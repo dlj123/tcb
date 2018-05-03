@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/leave.css">
+</head>
+
+<body>
+	<header class="commonHeader">
+		<div class="common_top">
+			<div class="toBack">
+				<a href="javascript:history.go(-1)">
+					<i class="iconfont icon-fanhui"></i>返回
+				</a>
+			</div>
+			<div class="tit">生产物质采购</div>
+			<div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+		</div>
+	</header>
+	<section class="leave_wrap whitebg pb148">
+		<div class="top_tab">
+			<ul>
+				<li class="active">
+					<a href="javascript:;">生产物质采购</a>
+				</li>
+				<li>
+					<a href="javascript:;">生产物质采购记录</a>
+				</li>
+			</ul>
+		</div>
+		<div class="content_panel" style="display: block;">
+			<div class="infos">
+				<div class="infos_list">
+					<div class="item">
+						<div class="label">标题</div>
+						<div class="info_item title_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="title  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">使用类别</div>
+						<div class="info_item useType_wrap">
+							<!--status字段-->
+							<span id="useType">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">物品名称</div>
+						<div class="info_item productName_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="productName  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">规格型号</div>
+						<div class="info_item modelType_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="modelType  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">数量</div>
+						<div class="info_item  quantity_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="quantity  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">单位</div>
+						<div class="info_item payee_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="payee  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">单价</div>
+						<div class="info_item  price_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="price  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">金额</div>
+						<div class="info_item money_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="money  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item beizhu">
+						<div class="label">备注</div>
+						<div class="info_item memo_wrap certify_mark leaveMark_wrap">
+							<textarea placeholder="请输入" class="memo leaveMark"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="addpics">
+                               <div class="addpics_tit">
+                                    <h3>添加图片</h3>
+                                    <span><em>0</em>/9</span>
+                                </div>
+                     
+                                <ul class="addpics_list" id="fileList">
+                                    <li class="last" id="last">
+                                       <div class="pic">
+                                            <input type="file" id="upImgInput" name="image" accept="image/*" capture="camera" multiple class="upImgInput">
+                                            
+                                                <span class="addIcon iconfont icon-add"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                 <div class="upAttach_area">
+                                    <div id="upAttacnBtn_wrap">
+		                                上传附件
+		                                <input type="file" accept=".csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,text/html,.pdf" />
+		                            </div>
+                                    <ul id="upAttacnList">
+                                        <!--<li>
+                                            <p>某某文件</p>
+                                            <a href="javascript:;">删除</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+             </div> 
+			<div class="pt2">
+				<div class="submit_wrap">
+					<button type="submit" class="submit_btn" id="productMaterialsSubmit">提交</button>
+				</div>
+			</div>
+		</div>
+		<div class="content_panel">
+			<ul class="productMaterials_record" id="productMaterials_record">
+			</ul>
+		</div>
+	</section>
+     <div id="loading">
+        <span class="loading_icon"></span>
+    </div> 
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/lib/require.js" data-main="../../js/productMaterials/productMaterials"></script>
+	<script type="text/javascript" src="../../js/widget/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/widget/picker.min.js"></script>
+
+</body>
+</html>

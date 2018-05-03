@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/data.css">
+</head>
+<body>
+	<header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:history.go(-1)">
+                   <i class="iconfont icon-fanhui"></i>返回
+                </a>
+            </div>
+            <div class="tit">运能</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+    </header>
+    <section class="data_wrap02">
+    	<ul class="capacity_tab">
+            <li class="active">日</li>  
+            <li>月</li>
+            <li>年</li> 
+        </ul>
+    	<div class="content_panel" style="display: block;">
+             <table cellpadding="0" cellspacing="0" class="capacity_table" id="dayCapacity">
+                 <colgroup>
+                     <col class="col01">
+                     <col class="col02">
+                     <col class="col03">
+                     <col class="col04">
+                 </colgroup>
+                 <thead>
+                     <tr>
+                         <th>车号</th>
+                         <th>方量</th>
+                         <th>人数</th>
+                         <th>运能</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <!--<tr>
+                         <td>501</td>
+                         <td>80m³</td>
+                         <td>1人</td>
+                         <td>80m³/1人</td>
+                     </tr>-->
+                 </tbody>
+             </table>   
+        </div>
+        <div class="content_panel">
+             <table cellpadding="0" cellspacing="0" class="capacity_table" id="monthCapacity">
+                 <colgroup>
+                     <col class="col01">
+                     <col class="col02">
+                     <col class="col03">
+                     <col class="col04">
+                 </colgroup>
+                 <thead>
+                     <tr>
+                         <th>日期</th>
+                         <th>方量</th>
+                         <th>人数</th>
+                         <th>运能</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <!--<tr>
+                         <td>1日</td>
+                         <td>80m³</td>
+                         <td>1人</td>
+                         <td>80m³/1人</td>
+                     </tr>-->
+                 </tbody>
+             </table>   
+        </div>
+        <div class="content_panel">
+             <table cellpadding="0" cellspacing="0" class="capacity_table" id="yearCapacity">
+                 <colgroup>
+                     <col class="col01">
+                     <col class="col02">
+                     <col class="col03">
+                     <col class="col04">
+                 </colgroup>
+                 <thead>
+                     <tr>
+                         <th>月份</th>
+                         <th>方量</th>
+                         <th>人数</th>
+                         <th>运能</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <!--<tr>
+                         <td>1月</td>
+                         <td>80m³</td>
+                         <td>1人</td>
+                         <td>80m³/1人</td>
+                     </tr>-->
+                 </tbody>
+             </table>   
+        </div>
+    </section>
+   
+<script type="text/javascript" src="../../js/lib/require.js" data-main="../../js/data/capacity"></script>
+</body>
+</html>

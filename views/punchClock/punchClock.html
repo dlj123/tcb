@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/punchClock.css">
+	<script type="text/javascript" src="../../js/remAdaptation.js"></script>
+     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=vlekTRkniIsZPlcIeGeeAN2qxZrlxACD"></script> 
+      
+
+
+</head>
+<body>
+
+   <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:history.go(-1)">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>  
+            </div>
+            <div class="tit">打卡</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+    </header>
+    <section class="punchClock_wrap">
+    	<div class="clock_tab">
+    		<a href="javascript:;" class="active">打卡</a>
+    		<a href="javascript:;">打卡记录</a>
+    	</div>
+    	<div class="content_panel" style="display:block;">
+    		 <div class="punchClock_top">
+                <p id="currenTime">2017.10.26  星期四</p>
+    		 	<a href="#" class="wenHao">
+                   <i class="iconfont icon-question"></i>
+    		 	</a>	
+    		 </div>
+    		 <div class="punchClock_map" id="punchClock_map">                
+             </div>
+             <ul class="clockState_list">
+                    <li>
+                        <span class="item_icon"><i></i></span>
+                        <p class="time" id="goToWorkArea"></p>
+                    </li> 
+                    <li>
+                        <span class="item_icon"><i></i></span>
+                        <p class="time" id="BackTimeArea"></p>
+                    </li>
+                    <!--<li class="active">
+                        <span class="item_icon"><i></i></span>
+                        <p class="time">8点30签到</p>
+                        <em class="state normal">正常</em>
+                    </li>
+                    <li class="active">
+                        <span class="item_icon"><i></i></span>
+                        <p class="time">04:30签退
+                            <span>备注：因公司原因外出</span>
+                        </p>
+                        <em class="state abnormal">异常</em>
+                    </li>-->
+             </ul>
+             <div class="ope_area">
+                <!--<p class="notice"><i class="iconfont icon-gou"></i>已进入签到区</p>-->
+                <div class="notice_fresh">
+                    <p class="notice"><!--<i class="iconfont icon-cha"></i>未进入签到区--></p>
+                    <span class="freshBtn"><i class="iconfont icon-shuaxin"></i></span>
+                </div>
+                <a href="#" class="arrive_btn"></a><!--normal点亮按钮，abnormal按钮为灰色-->
+            </div>     
+    	</div>
+    	<div class="content_panel">
+            <!--<div class="record_area" id="record_area"></div>
+            <div class="recordlist_wrap">
+                <ul class="clockState_list record_list">
+                        <li class="active">
+                            <span class="item_icon"><i></i></span>
+                            <p class="time">8点30签到</p>
+                            <em class="state normal">正常</em>
+                        </li>
+                        <li class="active">
+                            <span class="item_icon"><i></i></span>
+                            <p class="time">04:30签退
+                                <span>备注：因公司原因外出</span>
+                            </p>
+                            <em class="state abnormal">异常</em>
+                        </li>
+                </ul>
+            </div>--> 
+            <div class="record_wrap">
+                <div class="div_changeMonth">
+                    <span class="currentMonth" id="currentMonth"></span>
+                    <i class="iconfont icon-jiantou-copy-copy"></i>
+                </div>
+                <!--<div class="div_changeMonth"><span onclick="upMonth()">上一月</span><span onclick="nextMonth()">下一月</span></div>-->
+                <div id="calendar_div" class="div_calendar">
+
+                </div>
+                <div id="current_date_label"></div>
+                <div class="calendar_notice">
+                    <p>为正常签到</p>
+                   <!-- <p>为请假或缺席</p>-->
+                </div>
+            </div>  
+            <div class="recordlist_wrap" id="recordlist_wrap">
+                <ul class="clockState_list record_list">
+                        <li class="active">
+                            <span class="item_icon"><i></i></span>
+                            <p class="time" id="arriveTime"></p>
+                           <!-- <em class="state normal">正常</em>-->
+                        </li>
+                        <li class="active">
+                            <span class="item_icon"><i></i></span>
+                            <p class="time" id="backTime">
+                              <!-- <span>备注：因公司原因外出</span>-->
+                            </p>
+                            <!--  <em class="state abnormal">异常</em>-->
+                        </li>
+                </ul>
+            </div>   
+        </div>
+    </section>
+    <!--确认签到备注弹层-->
+    <!--<div class="mask" id="arrive_layer">
+        <div class="arrive_layer">
+            <div class="arrive_cont">
+                <h3 class="tit">确认提前签退</h3>
+                <div class="arriveArea_wrap">
+                    <textarea placeholder="备注一下（非必填）" class="arrive_area"></textarea>
+                </div>
+                <div class="opes_btn">
+                    <button type="button" class="confirm_btn">确认</button>
+                    <button type="button" class="concel_btn">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/punchClock"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+   
+    <script type="text/javascript" src="../../js/widget/mui.min.js"></script>
+    <script type="text/javascript" src="../../js/widget/picker.min.js"></script>
+    <script src="../../js/widget/date.js" type="text/javascript" charset="utf-8" ></script>
+    <script src="../../js/widget/attendanceCalendar.js" type="text/javascript" charset="utf-8" ></script>
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

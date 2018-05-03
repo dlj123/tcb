@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/leave.css">
+	
+</head>
+<body>
+	<header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:history.go(-1)">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>  
+            </div>
+            <div class="tit">报销</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+    </header>
+    <section class="leave_wrap clyd_wrap">
+        <div class="top_tab">
+                    <ul>
+                        <li class="active"><a href="javascript:;">报销</a></li>
+                        <li><a href="javascript:;">报销记录</a></li>            
+                    </ul>
+        </div>
+        <div class="content_panel" style="display: block;">
+                <div class="infos">
+                		<div class="infos_list ltMoney">
+                            <div class="item">
+                                <div class="label">所属公司</div>
+                                <div class="info_item companyName"></div>
+                            </div>
+                            <div class="item">
+                                <div class="label">所属部门</div>
+                                <div class="info_item deptName"></div>
+                            </div>
+                            <div class="item">
+                                <div class="label">所属职位</div>
+                                <div class="info_item positionName"></div>
+                            </div>
+                            <div class="item">
+                                <div class="label">报销人员</div>
+                                <div class="info_item people"></div>
+                            </div>	
+                            <div class="item">
+                                <div class="label">预算内费用借款</div>
+                                <div class="info_item overSpeedMark">
+                                    <input name="inLoan" type="number" placeholder="请输入" class="leaveMark"></input>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label">预算外费用借款</div>
+                                <div class="info_item overSpeedMark">
+                                    <input name="outLoan" type="number" placeholder="请输入" class="leaveMark"></input>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label">金额</div>
+                                <div class="info_item overSpeedMark">
+                                    <input name="money" type="number" placeholder="请输入" class="leaveMark"></input>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label">打入姓名</div>
+                                <div class="info_item overSpeedMark">
+                                    <input name="turnToName" type="text" placeholder="请输入" class="leaveMark"></input>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label">打入卡号</div>
+                                <div class="info_item overSpeedMark">
+                                    <input name="turnToNumber" type="number" placeholder="请输入" class="leaveMark"></input>
+                                </div>
+                            </div>
+                			<div class="item beizhu">
+                				<div class="label">摘要</div>
+                				<div class="info_item overSpeedMark leaveMark_wrap">
+                                    <textarea name="roundup" type="text" placeholder="请输入" class="leaveMark"></textarea>
+                                </div>
+                			</div>
+                		</div>
+                            
+                        <div class="addpics">
+                                <input type="hidden" id="hiddenAmount" />
+                                <div class="addpics_tit">
+                                    <table width="100%" height="100%">
+                                        <tr align="center">
+                                            <td  align="center"><h3><a href="#" id="addDetails">+添加明细</a></h3></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="submit_wrap">
+                                    <button type="submit" class="submit_btn" id="leaveSubmit">提交</button>
+                                </div>
+                       </div>
+       
+                    <!--<div id="amount" class="item">
+                            <div class="label" id="amount"><br/>&nbsp;&nbsp;&nbsp;总金额:</div>
+                        </div>-->
+                	</div>
+                   
+                    
+                    <div id="amount" class="totalMoney">
+                         <div class="" id="amount">&nbsp;&nbsp;&nbsp;总金额:</div>
+                    </div>
+                    <div class="addpics pb148">
+                               <div class="addpics_tit">
+                                    <h3>添加图片</h3>
+                                    <span><em>0</em>/9</span>
+                                </div>
+                     
+                                <ul class="addpics_list" id="fileList">
+                                    <li class="last" id="last">
+                                       <div class="pic">
+                                            <input type="file" id="upImgInput" name="image" accept="image/*" capture="camera" multiple class="upImgInput">
+                                            
+                                                <span class="addIcon iconfont icon-add"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                 <div class="upAttach_area">
+                                    <div id="upAttacnBtn_wrap">
+                                        上传附件
+                                        <input type="file" accept=".csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,text/html,.pdf" />
+                                    </div>
+                                    <ul id="upAttacnList">
+                                        <!--<li>
+                                            <p>某某文件</p>
+                                            <a href="javascript:;">删除</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                    </div> 
+        </div>
+        <div class="content_panel">
+            <ul class="leave_record" id="reimbursement_record">
+                
+            </ul>
+        </div>            
+    </section>
+   <div id="loading">
+        <span class="loading_icon"></span>
+    </div> 
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/lib/require.js" data-main="../../js/reimbursement/reimbursement"></script>
+    <script type="text/javascript" src="../../js/widget/mui.min.js"></script>
+    <script type="text/javascript" src="../../js/widget/picker.min.js"></script>
+
+</body>
+</html>

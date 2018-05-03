@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/leave.css">
+<body>
+    <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+            	<a href="javascript:history.go(-1);">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>  
+            </div>
+            <div class="tit">车辆检查记录</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+    </header>
+    <section class="leave_wrap leave_wrap02">
+    	<div class="infos">
+            <div class="infos_list pore">
+                    <div class="item">
+                                <div class="label">公司</div>
+                                <div class="info_item company"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">车队</div>
+                                <div class="info_item deparmtent"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">车号</div>
+                                <div class="info_item carNum"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">人员</div>
+                                <div class="info_item carPerson"></div>
+                    </div>
+                	<div class="item">
+                				<div class="label">检查日期</div>
+                				<div class="info_item checkDate"></div>
+                	</div>
+                	<div class="carCheck">
+                               <ul class="mui-table-view carCheck_before"> 
+                                    <li class="mui-table-view-cell mui-collapse carCheck_cell">
+                                        <a class="mui-navigate-right" href="#">车辆检查类型</a>
+                                        <div class="mui-collapse-content">
+                                            <div class="check_list">
+                                              <div class="check_item">
+                                                  <div>驾驶室外观检查</div>
+                                                  <div id="jc1">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>车辆底盘检查</div>
+                                                  <div id="jc2">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>搅拌桶内外检查</div>
+                                                  <div id="jc3">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>卸料槽卫生检查</div>
+                                                  <div id="jc4">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>车辆自损检查</div>
+                                                  <div id="jc5">
+                                                      
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>车辆维保检查</div>
+                                                  <div id="jc6">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>车辆证件检查</div>
+                                                  <div id="jc7">
+                                                      
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>车辆牌照检查</div>
+                                                  <div id="jc8">
+                                                      
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>人员证件检查</div>
+                                                  <div id="jc9">
+                                                       
+                                                  </div>
+                                               </div>
+                                               <div class="check_item">
+                                                  <div>安全帽、砼号牌检查</div>
+                                                  <div id="jc10">
+                                                       
+                                                  </div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                    </div>
+                    <div class="item">
+                				<div class="label">说明</div>
+                				<div class="info_item checkMemo"></div>
+                	</div>
+                	<div class="stateIcon" id="stateIcon"></div><!--sucessIcon为成功的图标-->
+            </div> 
+            <div class="picList_wrap">
+                 <div class="picList_tit">所上传图片</div> 
+                 <ul class="picList" id="picList">                      
+                 </ul> 
+            </div>
+            <div class="fileList_wrap">
+                 <div class="fileList_tit">所上传文件</div>
+                 <ul class="fileList" id="fileList">
+                 </ul> 
+            </div>   			
+         </div>       			
+    </section>
+    <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/inspection/inspection_record"></script>
+</body>
+</html>

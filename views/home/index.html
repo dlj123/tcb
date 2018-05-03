@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/index.css">
+	<script type="text/javascript" src="../../js/remAdaptation.js"></script>
+</head>
+<body>
+	<header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:history.go(-1)">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>  
+            </div>
+            <div class="tit">工作</div>
+            <div class="asidemenu"><a href="javascript:;"><i class="iconfont icon-fangzi"></i></a></div>
+        </div>
+    </header>
+    <section class="incontent_wrap">
+    	<div class="in_top">
+    		<div class="name_weather">
+                <div href="javascript:;" id="compaChange">
+        			<p class="compa_name" id="compa_name"></p>
+                    <div class="select_company_wrap" id="selectCompany">
+                        <div class="point"><span></span></div>
+                        <div class="select_company_box">
+                            <ul class="companyList" id="companyList">
+                             
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
+    			<div class="weather" id="weather"></div>
+    		</div>
+    		<ul class="insec1_menus">
+    			<li class="launch">
+    				<a href="#">
+    					<!--<span class="num">+1</span>-->
+	    				<div></div>
+	    				<p>发起</p>
+    			    </a>
+    			</li>
+    			<li class="examine">
+    				<a href="#">
+                <!--<span class="num">+1</span>-->
+    					  <div></div>
+    				    <p>审核</p>
+    				</a>
+    		    </li>
+    			<li class="copy">
+    				<a href="#">
+	    				<div></div>
+	    				<p>抄送</p>
+    			    </a>
+    			</li>
+    			<li class="message">
+    				<a href="../message/message.html">
+	    				<div></div>
+	    				<p>公告</p>
+    			    </a>
+    			</li>
+    		</ul>
+    	</div>
+        <div id="inSecCont"></div>   	
+    </section>
+    <section>
+        <div class="footMenu">
+            <ul class="footMenu_list" id="footMenu">
+            </ul>
+        </div>
+    </section>
+
+    <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/index"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=vlekTRkniIsZPlcIeGeeAN2qxZrlxACD"></script>
+    <script type="text/javascript">
+         var lat,lon;
+         if(navigator.geolocation){
+             var geolocation = new BMap.Geolocation();  
+             geolocation.getCurrentPosition( function(r) {
+                lat =r.latitude;
+                lon = r.longitude;
+                console.log(r,lat,lon);
+                $.ajax({
+                      type:'post',
+                      url: "https://free-api.heweather.com/s6/weather/now?location="+lat+","+lon+"&key=f05dc7d9a9a442368fa595946dd56c64",//请求和风天气API
+                      async:false,
+                      dataType:'json',
+                      headers: {
+                           Accept: "application/json; charset=utf-8"
+                       },
+                      success:function(Response){
+                        
+                         $('#weather').html("今日天气："+Response.HeWeather6[0].now.cond_txt+"&nbsp;"+Response.HeWeather6[0].now.tmp+'℃');
+                      }
+                  })
+            })
+         }
+         else{
+            $('#weather').innerHTML="浏览器版本较低";
+         } 
+      
+       
+    </script>
+</body>
+</html>

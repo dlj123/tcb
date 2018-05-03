@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+  <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/applyTable.css">
+</head>
+<body>
+ <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+              <a href="javascript:history.go(-1)">
+                <i class="iconfont icon-fanhui"></i>返回
+              </a>  
+            </div>
+            <div class="tit">基本借款申请表</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+  </header> 
+  <section class="applyTable_wrap">
+    	  <div class="applyTable_cont">
+           <ul class="applyTable_list">
+             <li>
+               <div class="label">所属公司</div>
+               <div class="value company"></div>
+             </li>
+              <li>
+               <div class="label">所属部门</div>
+               <div class="value department"></div>
+             </li>
+             <li>
+               <div class="label">所属职位</div>
+               <div class="value position"></div>
+             </li>
+             <li>
+               <div class="label">借款人姓名</div>
+               <div class="value people"></div>
+             </li>
+             <li>
+               <div class="label">借款金额</div>
+               <div class="value money"></div>
+             </li>
+             <li>
+               <div class="label">打入卡号</div>
+               <div class="value enterNumber"></div>
+             </li>
+             <li>
+               <div class="label">打入姓名</div>
+               <div class="value enterName"></div>
+             </li>
+             <li>
+               <div class="label">借款事由</div>
+               <div class="value reason">
+               </div>
+             </li>
+             <li>
+               <div class="label">备注</div>
+               <div class="value memo">
+               </div>
+             </li>
+           </ul> 
+          <div class="picList_wrap">
+                 <div class="picList_tit">所上传图片</div> 
+                 <ul class="picList" id="picList">                      
+                 </ul> 
+            </div>
+            <div class="fileList_wrap">
+                 <div class="fileList_tit">所上传文件</div>
+                 <ul class="fileList" id="fileList">
+                 </ul> 
+            </div> 
+           <div class="applyTable_ope">
+             <a href="javascript:;" class="pass">同意</a>
+             <a href="javascript:;" class="approval" style="display: none;">授权审批</a>
+             <a href="javascript:;" class="reject">拒绝</a>
+           </div>
+        </div>
+   </section>
+   <!--审核不通过-->
+   <div class="mask" id="checkno_box">
+     <div class="content_wrap">
+       <div class="content_box">
+         <ul class="reason_list">
+           <li class="active">
+             <i class="iconfont icon-gou"></i>
+             <p>不符合申请条件</p>
+           </li>
+           <li>
+             <i class="iconfont icon-gou"></i>
+             <p>申请资料不全</p>
+           </li>
+           <li>
+             <i class="iconfont icon-gou"></i>
+             <p>其他</p>
+           </li>
+           <!--<li class="rejectInput">
+             <input id="rejectInfo" placeholder="拒绝申请说明"></input>
+           </li>-->
+         </ul>
+         <div class="reject_ope">
+             <a href="javascript:;" class="confirm">确定</a>
+             <a href="javascript:;" class="concel">取消</a>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!--审核通过--> 	
+    <div class="mask" id="pass_box">
+            <div class="content_wrap">
+                  <div class="content_box">
+                        <h5 class="agreeTit">同意?</h5>
+                        <div class="agreeWrap"><textarea class="agreeArea" placeholder="备注一下？"></textarea></div>
+                        <div class="ope"><a href="javascript:;" class="confirm">确定</a><a href="javascript:;" class="concel">取消</a></div>
+                  </div>
+            </div>
+    </div>
+    <!--授权审批-->
+     <div class="mask" id="accredit_box">
+            <div class="content_wrap">
+                  <div class="content_box">
+                      <h5 class="agreeTit accreditTit">确定授权？</h5>
+                      <div class="accredit_con">
+                        <div class="accredit_item">
+                          <span class="label">公司</span>
+                          <div class="accredit_company">
+                             <div class="accredit_company_select" id="accredit_company_select">
+                               <span>请选择</span>
+                               <span><i class="iconfont icon-jiantou-copy-copy"></i></span>
+                             </div>
+                             <ul class="accredit_company_list" id="accredit_company_list">
+                                
+                             </ul>
+                          </div>
+                        </div>
+                        <div class="accredit_item" id="accredit_item2">
+                            <span class="label">部门</span>
+                            <div class="accredit_department">
+                                <div class="accredit_department_select" id="accredit_department_select">
+                                   <span>请选择</span>
+                                   <span><i class="iconfont icon-jiantou-copy-copy"></i></span>
+                                </div>
+                                <ul class="accredit_department_list" id="accredit_department_list">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accredit_item" id="accredit_item3">
+                            <span class="label">职位</span>
+                            <div class="accredit_position">
+                                <div class="accredit_position_select" id="accredit_position_select">
+                                   <span>请选择</span>
+                                   <span><i class="iconfont icon-jiantou-copy-copy"></i></span>
+                                </div>
+                                <ul class="accredit_position_list" id="accredit_position_list">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accredit_item last">
+                            <!--<span class="label">备注</span>-->
+                            <div class="accredit_memo">
+                              <textarea id="memo_area" placeholder="备注:"></textarea>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="ope"><a href="javascript:;" class="confirm">确定</a><a href="javascript:;" class="concel">取消</a></div>
+                  </div>
+            </div>
+     </div>            
+ <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/basicLoan/basicLoan_check"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+    <meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/login.css">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+    <script type="text/javascript">
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0) {
+                $(window).load(function(){
+                    $('input:-webkit-autofill').each(function(){
+                        var text = $(this).val();
+                        var name = $(this).attr('name');
+                        $(this).after(this.outerHTML).remove();
+                        $('input[name=' + name + ']').val(text);
+                    });
+                });
+            }
+    </script>
+</head>
+<body>
+    <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:;">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>
+            </div>
+            <div class="tit">登录</div>
+            <div class="asidemenu"><i class="iconfont icon-unie644"></i></div>
+        </div>
+    </header>
+    <section class="login_wrap">
+        <form method="" action="" id="lg_form">
+        	<div class="touxiang"><img src="../../images/touxiang.png" alt="" title=""></div>
+        	<div class="input-container">
+        		<input type="text" class="acc-input username" placeholder="请输入账号">
+        		<i class="decIcon iconfont icon-cha"></i>
+        	</div>
+        	<div class="input-container">    	
+        		<input type="password" class="acc-input password" placeholder="请输入密码">
+        		<i class="decIcon iconfont icon-cha"></i>
+        		<span class="pwd_show iconfont icon-yanjingbishang"></span>
+        	</div>
+            <div class="message"></div>
+        	<div class="lgbtn_wrap">
+        		<button type="button">登录</button>
+        	</div>
+            <div class="remember_pwd"><i class="checkboxIcon iconfont icon-gou"></i>记住账号密码</div>
+        </form>    
+    </section>
+    <!--选择公司弹窗-->
+    <div class="mask" id="selectCompany">
+        <div class="layer_wrap">
+              <div class="layer_box02">
+                    <h3 class="tit"></h3>
+                    <ul class="companyList" id="companyList">
+                        <!--<li class="active"><i class="iconfont icon-gou"></i>武汉邦达优</li>
+                        <li><i class="iconfont icon-gou"></i>北拓物联</li>-->
+                    </ul>
+                    <div class="confirm_wrap">
+                        <button type="button">确定</button>
+                        <input type="hidden" name="" value="1">
+                    </div>
+              </div>
+        </div>
+    </div>        
+   <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/login"></script>
+</body>
+</html>

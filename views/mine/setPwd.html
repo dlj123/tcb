@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="../../css/mine.css">
+     <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+    <script type="text/javascript" src="../../js/widget/fastclick.js"></script>
+    <script type="text/javascript">
+        /*if ('addEventListener' in document) {  
+                document.addEventListener('DOMContentLoaded', function() {  
+                    FastClick.attach(document.body);  
+                }, false);  
+        }  */
+    </script>
+</head>
+<body>
+	<header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+                <a href="javascript:history.go(-1)">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>   
+            </div>
+            <div class="tit">我的</div>
+            <div class="asidemenu ope">完成</div>
+        </div>
+    </header>
+    <section class="mine_wrap">
+    	 <div class="setPwd_main">
+              <ul class="setPwd_list">
+                  <li>
+                      <label class="comm_label" for="account">账号</label>
+                      <p class="default_account"></p>
+                      <div class="edite_icon">
+                      
+                      </div>
+                  </li>
+                  <li>
+                      <label class="comm_label" for="oldPwd">旧密码</label>
+                      <input type="password" name="" class="comm_input" id="oldPwd" placeholder="请输入旧密码">
+                      <div class="edite_icon">
+                        <span class="change_icon"><i class="iconfont icon-yanjingbishang"></i></span>
+                        <span class="del_icon"><i class="iconfont icon-cha"></i></span>
+                      </div>  
+                  </li>
+                  <li>
+                      <label class="comm_label" for="newPwd">新密码</label>
+                      <input type="password" name="" class="comm_input" id="newPwd" placeholder="请输入新的密码">
+                      <div class="edite_icon">
+                        <span class="change_icon"><i class="iconfont icon-yanjingbishang"></i></span>
+                        <span class="del_icon"><i class="iconfont icon-cha"></i></span>
+                      </div>
+                  </li>
+                  <li>
+                      <label class="comm_label" for="comfirmPwd">确认密码</label>
+                      <input type="password" name="" class="comm_input" id="comfirmPwd" placeholder="请再次确认密码">
+                      <div class="edite_icon">
+                        <span class="change_icon"><i class="iconfont icon-yanjingbishang"></i></span>
+                        <span class="del_icon"><i class="iconfont icon-cha"></i></span>
+                      </div>
+                  </li>
+              </ul>   
+         </div>
+         <div class="setPwd_notice">
+             <p>密码必须至少8个字符，而且同时包含字母和数字</p>
+         </div>  	
+    </section>
+<script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/mine/setPwd"></script>
+</body>
+</html>

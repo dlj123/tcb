@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+  <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/applyTable.css">
+</head>
+<body>
+ <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+              <a href="javascript:history.go(-1)">
+                <i class="iconfont icon-fanhui"></i>返回
+              </a>  
+            </div>
+            <div class="tit">假期申请表</div>
+            <div class="asidemenu"><i class="iconfont icon-unie644"></i></div>
+        </div>
+  </header> 
+  <section class="applyTable_wrap">
+    	  <div class="applyTable_cont">
+           <ul class="applyTable_list">
+             <li>
+               <div class="label">姓名</div>
+               <div class="value name"></div>
+             </li>
+             <li>
+               <div class="label">所属公司</div>
+               <div class="value company"></div>
+             </li>
+              <li>
+               <div class="label">所在部门</div>
+               <div class="value department"></div>
+             </li>
+             <li>
+               <div class="label">公司职位</div>
+               <div class="value position"></div>
+             </li>
+             <li>
+               <div class="label">请假类型</div>
+               <div class="value type"></div>
+             </li>
+             <li>
+               <div class="label">开始时间</div>
+               <div class="value stateTime"></div>
+             </li>
+             <li>
+               <div class="label">结束时间</div>
+               <div class="value endTime"></div>
+             </li>
+             <li>
+               <div class="label">请假天数</div>
+               <div class="value leaveDays"></div>
+             </li>
+             <li>
+               <div class="label">备注</div>
+               <div class="value memo"></div>
+             </li>
+           </ul> 
+           <!--<div class="applyTable_ope">
+             <a href="javascript:;" class="pass">同意</a>
+             <a href="javascript:;" class="approval">授权审批</a>
+             <a href="javascript:;" class="reject">拒绝</a>
+           </div>-->
+        </div>
+   </section>
+   <!--审核不通过-->
+   <div class="mask" id="check_box">
+     <div class="content_wrap">
+       <div class="content_box">
+         <ul class="reason_list">
+           <li class="active">
+             <i class="iconfont icon-gou"></i>
+             <p>不符合申请条件</p>
+           </li>
+           <li>
+             <i class="iconfont icon-gou"></i>
+             <p>申请资料不全</p>
+           </li>
+           <li>
+             <i class="iconfont icon-gou"></i>
+             <p>其他</p>
+           </li>
+         </ul>
+         <div class="reason_confirm"><a href="#">确定</a></div>
+       </div>
+     </div>
+   </div>
+   <!--审核通过--> 	
+    <div class="mask" id="pass_box">
+            <div class="content_wrap">
+                  <div class="content_box">
+                        <h5 class="agreeTit">同意</h5>
+                        <div class="agreeWrap"><textarea class="agreeArea"></textarea></div>
+                        <div class="ope"><a href="javascript:;" class="comfirm">确定</a><a href="javascript:;" class="concel">取消</a></div>
+                  </div>
+            </div>
+    </div>
+ <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/applyTable"></script>
+</body>
+</html>

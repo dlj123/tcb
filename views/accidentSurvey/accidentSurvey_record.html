@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/leave.css">
+<body>
+    <header class="commonHeader">
+        <div class="common_top">
+            <div class="toBack">
+            	<a href="javascript:history.go(-1);">
+                  <i class="iconfont icon-fanhui"></i>返回
+                </a>  
+            </div>
+            <div class="tit">事故勘察记录</div>
+            <div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+        </div>
+    </header>
+    <section class="leave_wrap leave_wrap02">
+    	<div class="infos">
+            <div class="infos_list pore">
+                    <div class="item">
+                                <div class="label">日期</div>
+                                <div class="info_item rewardDate"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">公司</div>
+                                <div class="info_item company"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">车队</div>
+                                <div class="info_item deparmtent"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">车号</div>
+                                <div class="info_item carNum">2017.10.29</div>
+                    </div>
+                	<div class="item">
+                				<div class="label">人员</div>
+                				<div class="info_item person"></div>
+                	</div>
+                	<div class="item">
+                                <div class="label">事故勘察人</div>
+                                <div class="info_item accidentName"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">地点</div>
+                                <div class="info_item place"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">事故类型</div>
+                                <div class="info_item accidentType"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">金额</div>
+                                <div class="info_item money"></div>
+                    </div>
+                    <div class="item">
+                                <div class="label">见证人</div>
+                                <div class="info_item witness"></div>
+                    </div>
+                	<div class="item">
+                				<div class="label">事故说明</div>
+                				<div class="info_item memo"></div>
+                	</div>
+                	<div class="stateIcon" id="stateIcon"></div><!--sucessIcon为成功的图标-->
+            </div>
+               <div class="picList_wrap">
+                 <div class="picList_tit">所上传图片</div> 
+                 <ul class="picList" id="picList">                      
+                 </ul> 
+            </div>
+            <div class="fileList_wrap">
+                 <div class="fileList_tit">所上传文件</div>
+                 <ul class="fileList" id="fileList">
+                 </ul> 
+            </div>  			
+         </div>       			
+    </section>
+    <script  type="text/javascript" src="../../js/lib/require.js" data-main="../../js/accidentSurvey/accidentSurveyRecord"></script>
+</body>
+</html>

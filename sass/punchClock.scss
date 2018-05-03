@@ -1,0 +1,465 @@
+@import "common.scss";
+@import "font.scss";
+@import "widget/mui.scss";
+@import "widget/picker.scss";
+.clock_tab{
+	width: 100%;
+	height: .98rem;
+	background: #0093dd;
+	font-size: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+	a{
+		@include inlineBlock(middle);
+		height: .98rem;
+		line-height: .94rem;
+		font-size: .32rem;
+		color: #fff;
+		border-bottom: .04rem solid transparent;
+		padding:0 .1rem;
+	}
+    a.active{
+    	border-bottom: .04rem solid #fff;
+    }
+}
+.punchClock_wrap{
+	width: 100%;
+	padding-top: .9rem;
+	min-height: 100%;
+}
+.punchClock_top{
+	width: 100%;
+	height: .88rem;
+	position: relative;
+	padding:0 .2rem;
+	background: #fff;
+	p{
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: .3rem;
+		color: #333;
+		line-height: .88rem;
+	}
+	.wenHao{
+		display: block;
+		position: absolute;
+		right: .2rem;
+		top: 0;
+		width: .6rem;
+		height: .88rem;
+		line-height: .88rem;
+		text-align: center;
+		i{
+			font-size: .4rem;
+			color: #b3b3b3;
+		}
+	}
+}
+.punchClock_map{
+	width: 100%;
+	height: 4rem;
+	background: #f0f0f0;
+}
+.clockState_list{
+	width: 100%;
+	padding:1.05rem .85rem 0;
+	background: #fff;
+	li{
+		width: 100%;
+		position: relative;
+		padding-left: .75rem;
+		border-left: .01rem dashed #b3b3b3;
+		padding-bottom: .95rem;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+		justify-content:space-between;
+		align-items:flex-start;
+		.item_icon,.time,.state{
+			@include inlineBlock(middle);
+		}
+		.time,.state{
+			flex: none;
+		}
+		.item_icon{
+			width: .43rem;
+			height: .43rem;
+			border-radius: 50%;
+			background: #f5f5f5;
+			border: .01rem solid #ccc;
+			position: absolute;
+			left: -.21rem;
+			top: 0rem;
+			text-align: center;
+			i{
+				@include inlineBlock(top);
+				width:.16rem;
+				height: .16rem;
+				margin-top: .13rem;
+				background: #ccc;
+				border-radius: 50%;
+			}
+		}
+		.time{
+           font-size: .32rem;
+           color: #ccc;
+           span{
+           	 font-size: .24rem;
+           	 color: #ccc;
+           	 display: block;
+           	 padding-top: .2rem;
+           } 
+		}
+		.state{
+              height: .43rem;
+              line-height: .42rem;
+              border-radius: .25rem;
+              padding:0 .15rem;
+              font-size: .26rem;
+              color: #fff;
+		}
+		.state.normal{
+			border:.01rem solid #76bf55;
+            background: #badfaa;
+		}
+		.state.abnormal{
+            border:.01rem solid #f98149;
+            background: #fcc0a4;
+		}
+	}
+	li.active{
+		.time{
+			color: #333;
+		}
+	}
+	li:last-of-type{
+		border-left: 0;
+	}
+}
+.recordlist_wrap{
+	width: 100%;
+	padding:.4rem .2rem .4rem;
+	display: none;
+}
+.ope_area{
+	width: 100%;
+	padding: .2rem .7rem .75rem;
+	background: #fff;
+	div.notice_fresh{
+		width: 100%;
+		font-size: 0;
+		text-align: center;
+		p.notice,.freshBtn{
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 0;
+			line-height: .3rem;
+		 }
+	    p.notice{
+	    	font-size: .24rem;
+            color: #333;
+	  	   i{
+	       	 font-size: .3rem;
+	       	 margin-right: .1rem;
+	       }
+	       .icon-gou{
+	       	   color: #76bf55;
+	       	}
+	       .icon-cha{
+	           color: #ff5766;
+	       }
+	    }
+	    span.freshBtn{
+	    	width: 1rem;
+	    	line-height: 1.5;
+            i{
+		    	font-size: .4rem;
+		    	color: #b3b3b3;
+		    }
+	    }
+	}
+	.arrive_btn{
+		display: block;
+		width: 100%;
+		height: .98rem;
+        text-align: center;
+        line-height: .98rem;
+        font-size: .36rem;
+        color: #fff;
+        border-radius: .6rem;
+        margin-top:.2rem;
+	}
+	.arrive_btn.normal{
+		background: #0093dd;
+	}
+	.arrive_btn.abnormal{
+		background: #ccc;
+	}
+}
+.content_panel{
+	display: none;
+}
+.record_area{
+	width: 100%;
+	background: #fff;
+	min-height: 6.45rem;
+}
+.arrive_layer{
+	width: 100%;
+	padding: 0 1.05rem;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0,-50%);
+	-moz-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+.arrive_cont{
+	width: 100%;
+	background: #fff;
+	border-radius: .1rem;
+	h3.tit{
+		width: 100%;
+		height: .88rem;
+		line-height: .88rem;
+		border-bottom: .01rem solid #e0dfdf;
+		text-align: center;
+		font-size: .34rem;
+		color: #333;
+	}
+	.arriveArea_wrap{
+		width: 100%;
+		padding:.3rem;
+	}
+	.arrive_area{
+		width: 100%;
+		height: 2.26rem;
+		background: #f0f0f0;
+		border-radius: .1rem;
+		padding:.2rem;
+		font-size: .3rem;
+		color: #333;
+		resize: none;
+		line-height: 1.5;
+	}
+	.opes_btn{
+		width: 100%;
+		font-size: 0;
+		border-top: .01rem solid #e0dfdf;
+	}
+	.confirm_btn,.concel_btn{
+		width: 50%;
+		height: .88rem;
+		line-height: .88rem;
+		font-size: .34rem;
+		color: #157efb;
+		text-align: center;
+		background: none;
+	}
+	.confirm_btn{
+		border-right: .01rem solid #e0dfdf;
+	}
+	/*.concel_btn{}*/
+}
+#record_area{
+	width: 100%;
+}
+.record_wrap{
+	width: 100%;
+	background: #fff;
+	padding-bottom: .6rem;
+}
+
+/*日历*/
+.div_calendar {
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    display: -webkit-box;
+    font-family: Arial;
+    font-size: .3rem;
+    background: #fff;
+    padding: 0 .2rem;
+}
+.div_calendar .weekDay span{
+	color: #ccc;
+}
+/* 日历主体 */
+.div_calendar_body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 日元素 */
+.div_calendar span {
+    width: -webkit-calc(100% / 7);
+    width: -moz-calc(100% / 7);
+    width: -ms-calc(100% / 7);
+    width: -o-calc(100% / 7);
+    width: calc(100% / 7);
+    display: inline-block;
+    text-align: center;
+    line-height: .9rem;
+    position: relative;
+}
+
+/* 没有记录 */
+.div_calendar span.no {
+    color: #cbcbcb;
+}
+
+/* 正常 */
+/*.div_calendar span. {
+    color: #8ecda9;
+}*/
+.div_calendar span.normal,.div_calendar span.absense{
+	 &:after{
+    	display:block;
+    	content:"";
+    	width: .12rem;
+    	height: .12rem;
+    	border-radius: 50%;
+    	/*background: #76bf55;*/
+    	background: #fff;
+    	position: absolute;
+    	left: 50%;
+    	bottom: .1rem;
+    	-webkit-transform: translate(-50%,0);
+    	-moz-transform: translate(-50%,0);
+    	-ms-transform: translate(-50%,0);
+    	-o-transform: translate(-50%,0);
+    	transform: translate(-50%,0);
+    }
+}
+/* 缺勤 */
+.div_calendar span.normal {
+    /*color: #8ecda9;*/
+    &:after{
+    	background: #76bf55;
+       }
+}
+
+/* 缺勤 */
+.div_calendar span.absense{
+    /*color: #ff5766;*/
+    &:after{
+    	/*background: #ff5766;*/
+    	background: transparent;
+    }
+}
+
+/* 当前日期 */
+.div_calendar span.today {
+    border-radius: 50%;
+    background: #f98149;
+    color: #fff;
+}
+
+/* 选中 */
+.div_calendar span.select {
+    border-radius: 50%;
+    background: #39ac6a;
+     color: #fff;
+}
+
+/* 日历第一行日期 */
+.div_calendar .first_div {
+    text-align: right;
+}
+
+/* 日历末行日期 */
+.div_calendar .last_div {
+    text-align: left;
+}
+.calendar_notice{
+	width: 100%;;
+	text-align: left;
+    padding: .5rem .5rem 0;
+    p{
+    	 font-size: .24rem;
+         color: #999;
+         line-height: 1.5;
+         margin-bottom: .1rem;
+    }
+    p:first-of-type:before,p:nth-of-type(2):before{
+    	 width: .12rem;
+         height: .12rem;
+         display: inline-block;
+         vertical-align: middle;
+         content: "";
+         margin-right: .3rem;
+         border-radius: 50%;
+    }
+    p:first-of-type:before{
+         background: #76bf55;
+    }
+    p:nth-of-type(2):before{
+    	background: #ff5766;
+    }
+}
+
+
+
+
+/* 日期显示div */
+.div_calendar .div_currentDate {
+    text-align: right;
+}
+
+.div_calendar .changeDate {
+    cursor: pointer;
+}
+
+.div_calendar .div_currentDate span {
+    width: inherit;
+}
+
+.div_calendar .div_currentDate span em {
+    margin: 5px;
+}
+
+.div_target_label {
+    width: 80%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.div_changeMonth {
+	height: .88rem;
+	line-height: .88rem;
+    margin: auto auto;
+    text-align: center;
+}
+
+.div_changeMonth span {
+    cursor: pointer;
+}
+
+.div_changeMonth span:last-child {
+    margin-left: .2rem;
+}
+.div_changeMonth .currentMonth,.div_changeMonth i{
+	display: inline-block;
+	vertical-align: middle;
+	color: #333;
+	font-size: .3rem;
+}
+.div_changeMonth .currentMonth{
+	font-size: .3rem;
+	margin-right: .1rem;
+}
+.div_changeMonth i{
+	color: #aaa;
+}

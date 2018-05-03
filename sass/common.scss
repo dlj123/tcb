@@ -1,0 +1,344 @@
+html {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;height: 100%;}
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    input[type="text"],
+    input{-webkit-appearance:none; resize: none; border: 0; outline: none;}
+    button[type=button],button[type=submit],textarea{
+        outline: none;
+    }
+    input:-webkit-autofill, 
+     textarea:-webkit-autofill, 
+     select:-webkit-autofill { 
+           -webkit-box-shadow: 0 0 0 1000px white inset; 
+    }
+     input[type=text]:focus, input[type=password]:focus, textarea:focus {
+          -webkit-box-shadow: 0 0 0 1000px white inset; 
+    }
+    img {max-width: 100%;height: auto;width:auto\9; /* ie8 */border: none;}
+    /* 初始化开始*/
+    *{margin:0; padding:0; border:none;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -ms-box-sizing:border-box;
+        -o-box-sizing:border-box;
+        box-sizing:border-box;
+    }
+    body{background-color:#f0f0f0;color:#333;font-family: "Microsoft YaHei"; height: 100%;}
+    em,i,b{font-weight: normal;font-style: normal;}
+    a{text-decoration:none; color:#333;}
+    a:hover{ text-decoration:none;}
+    li{list-style:none;}
+    h1, h2, h3, h4, h5, h6{ font-size:100%;font-weight: normal;}
+    .clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+    .clearfix{zoom:1;}
+    .fl{float:left;}
+    .fr{float:right;}
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color:#999; font-size: .28rem;}
+    input:-moz-placeholder, textarea:-moz-placeholder {color: #999;}
+    input::-moz-placeholder, textarea::-moz-placeholder {color: #999;}
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {color: #999;}
+    section{
+        display: block;
+    }
+    /* 初始化结束 */
+ .pore{
+    position: relative;
+ }   
+/*自定义 */ 
+@mixin inlineBlock($valign){
+           display: inline-block;
+           vertical-align: $valign;
+}
+@mixin btn01($w,$h,$radius,$bg,$fz){
+    width: $w;
+    height: $h;
+    border-radius: $radius;
+    line-height: $h;
+    text-align: center;
+    background: $bg;
+    font-size: $fz;
+    color: #fff;
+    outline: none;
+} 
+
+
+
+/*共用头部*/
+.commonHeader{
+    width: 100%;
+    height: .9rem;
+    background: #3a3b3f;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+.common_top{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:flex-start;
+    .toBack,.asidemenu,.tit{
+        flex: none;
+        line-height: .9rem;
+        text-align: center;
+    }
+    .toBack{
+        width: 1.5rem;
+       font-size: .32rem;
+       color:#fff;
+       a{
+         display: inline-block;
+         font-size: .32rem;
+         color:#fff;
+       }
+       i{
+        margin-right:.05rem;
+        display: inline-block;
+        font-size: .3rem;
+       }
+    }
+    .asidemenu{
+      width: 1.2rem;
+      font-size: .32rem;
+       color:#fff;
+       i{
+        display: inline-block;
+        font-size: .5rem;
+        font-weight: bold;
+        color: #fff;
+       }
+    }
+    .tit{
+        width: -webkit-calc(100% - 1.5rem - 1.2rem);
+        width: -moz-calc(100% - 1.5rem - 1.2rem);
+        width: -ms-calc(100% - 1.5rem - 1.2rem);
+        width: -o-calc(100% - 1.5rem - 1.2rem);
+        width: calc(100% - 1.5rem - 1.2rem);
+        font-size: .37rem;
+        color: #fff;
+        font-weight: 400;
+    }
+}
+/*共用底部菜单*/
+.footMenu{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    height: .98rem;
+    border-top: .01rem solid #f0f0f0;
+}
+.footMenu_list{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;
+    li{
+        flex: none;
+        a{
+            display: block;
+            padding-top: .1rem;
+        }
+        span{
+            display: inline-block;
+            vertical-align: top;
+            width: .46rem;
+            height: .46rem;
+        }
+        p{
+            width: 100%;
+            text-align: center;
+            font-size: .2rem;
+            color: #b3b3b3;
+            padding-top: .05rem;
+            line-height: 1;
+        }
+    }
+    li.active{
+        p{
+            color: #0093dd;
+        }
+    }
+    li.task{
+        span{
+            background: url("../images/foot_menu01.png") no-repeat left top;
+            background-size: contain;
+        }
+    }
+    li.task.active{
+        span{
+             background: url("../images/foot_menu01_on.png") no-repeat left top;
+            background-size: contain;
+        }
+    }
+    li.data{
+        span{
+             background: url("../images/foot_menu02.png") no-repeat left top;
+            background-size: contain; 
+        }
+    }
+    li.data.active{
+        span{
+             background: url("../images/foot_menu02_on.png") no-repeat left top;
+            background-size: contain; 
+        }
+    }
+    li.mine{
+        span{
+              background: url("../images/foot_menu03.png") no-repeat left top;
+            background-size: contain;
+        }
+    }
+    li.mine.active{
+        span{
+              background: url("../images/foot_menu03_on.png") no-repeat left top;
+            background-size: contain;
+        }
+    }
+}
+/*通用蒙层*/
+.mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 9999;
+}
+.mask02{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.5);
+    display: none;
+    z-index: 9999;
+}
+.btmcont{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding:0 .22rem .22rem .22rem;
+}
+.btmopes{
+    width: 100%;
+    .pics,.camera{
+        display: block;
+        width: 100%;
+        height: 1.15rem;
+        background: #f8f8f8;
+        line-height: 1.14rem;
+        border-top:.01rem solid #d7d7d7;
+        font-size: .4rem;
+        color: #157efb;
+        text-align: center;
+    }
+    .pics{
+        border-top-left-radius: .08rem;
+        border-top-right-radius:.08rem;
+    }
+    .camera{
+        border-bottom-left-radius: .08rem;
+        border-bottom-right-radius:.08rem;
+    }
+}
+.btmconcel{
+    width: 100%;
+    margin-top: .15rem;
+    .concel{
+        display: block;
+        width: 100%;
+        height: 1.15rem;
+        background: #fff;
+        line-height: 1.15rem;
+        font-size: .4rem;
+        color: #157efb;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+.notice_info{
+    width: 100%;
+    padding:.5rem .4rem;
+    font-size: .3rem;
+    color: #666;
+    line-height: 1.5;
+}
+.layer_wrap{
+    width: 100%;
+    padding:0 1rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+.layer_box{
+    width: 100%;
+    background: #fff;
+    border-radius: .08rem;
+    position: relative;
+ }
+ .layer_box02{
+     width: 100%;
+    background: #fff;
+    border-radius: .08rem;
+    padding-bottom: 1.4rem;
+    position: relative;
+    h3.tit{
+        width: 100%;
+        height: .9rem;
+        background:#ededed;
+        font-size: .36rem;
+        color: #333;
+        text-align: center;
+        line-height: .9rem;
+        border-top-left-radius: .08rem;
+        border-top-right-radius: .08rem;
+    }
+    .confirm_wrap{
+        width: -webkit-calc(100% - 2rem);
+        width: -moz-calc(100% - 2rem);
+        width: -ms-calc(100% - 2rem);
+        width: -o-calc(100% - 2rem);
+        width: calc(100% - 2rem);
+        padding: .3rem;
+        background: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 1rem;
+        border-bottom-left-radius: .08rem;
+        border-bottom-right-radius: .08rem;
+        button[type=button]{
+            width: 100%;
+            height: .8rem;
+            background: #0193de;
+            line-height: .8rem;
+            text-align: center;
+            font-size: .36rem;
+            color: #fff;
+            display: block;
+            border-radius: .08rem;
+        }
+    }
+ }

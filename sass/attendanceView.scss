@@ -1,0 +1,231 @@
+@import "common.scss";
+@import "font.scss";
+@import "widget/mui.scss";
+@import "widget/picker.scss";
+.attendance_wrap{
+	width: 100%;
+    padding:.9rem 0 0;
+    min-height: 100%;
+    background: #fff;
+}
+.team_time{
+	width: 100%;
+	height: .98rem;
+	background: #fff;
+	font-size: 0;
+	/*display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:center;*/
+    .team,.time{
+    	display: inline-block;
+    	vertical-align: top;
+    	width: 50%;
+    	font-size: .32rem;
+    	color: #333;
+    	height: .98rem;
+    	line-height: .98rem;
+    	text-align: center;
+    	i{
+    		@include inlineBlock(top);
+    		font-size: .38rem;
+    		color: #d9d9d9;
+    		margin-right: .06rem;
+    		margin-top: .01rem;
+    	}
+    	i:nth-of-type(2){
+    		font-size: .28rem;
+    		color: #d9d9d9;
+    		margin-left: .05rem;
+    	}
+    }
+}
+.attendanceView_tab{
+	width: 100%;
+	height: .98rem;
+	background: #0093dd;
+	font-size: 0;
+	li{
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		height: .98rem;
+		line-height: .98rem;
+		text-align: center;
+		font-size: .32rem;
+		color: #fff;
+		a{
+			display: inline-block;
+			vertical-align: top;
+			font-size: .32rem;
+		    color: #fff;
+            height: .98rem;
+		    line-height: .94rem;
+		    padding: 0 .4rem;
+		    border-bottom: .04rem solid transparent;
+		}
+	}
+	li.active a{
+		 border-bottom: .04rem solid #fff;
+	}
+}
+.content_panel{
+	display: none;
+}
+.normal_table,.absence_table{
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	thead tr th{
+		text-align: center;
+		padding:0 .1rem;
+		text-align: center;
+		height: 1rem;
+		font-size: .32rem;
+		background: #ccc;
+		line-height: 1.5;
+		color: #fff;
+		font-weight: normal;
+	}
+	tbody tr td{
+		border-bottom: .01rem solid #f0f0f0;
+		text-align: center;
+		padding:0 .1rem;
+		text-align: center;
+		height: 1rem;
+		font-size: .3rem;
+		color: #333;
+		line-height: 1.5;
+	}
+	tbody tr td:last-of-type{
+		color: #fc8a03;
+		a{
+			display: block;
+			color: #fc8a03;
+		}
+	}
+}
+.edite_list{
+	width: 100%;
+	padding-left: .3rem;
+	li{
+		width: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+		justify-content:space-between;
+		align-items:center;
+		min-height: 1.5rem;
+		border-bottom: .01rem solid #f0f0f0;
+		div.label{
+			max-width:2rem;
+			font-size: .3rem;
+			color: #333;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		div.info{
+			max-width: -webkit-calc(100% - 2rem);
+			max-width: -moz-calc(100% - 2rem);
+			max-width: -ms-calc(100% - 2rem);
+			max-width: -o-calc(100% - 2rem);
+			max-width: calc(100% - 2rem);
+			min-height: 1.5rem;
+			line-height: 1.5rem;
+			padding-right: .2rem;
+			padding-left:.3rem;
+			font-size: .3rem;
+			color: #999;
+			text-align: right;
+		}
+	}
+	li:last-of-type{
+		    min-height: 2.4rem;
+        .intro_wrap{
+        	width: 100%;
+        	flex: none;
+        }
+		.intro_area{
+			display: block;
+		    width: 100%;
+		    height: 2rem;
+		    background: rgba(255,255,255,.7);
+		    border-top-left-radius: .2rem;
+		    border-top-right-radius: .2rem;
+		    resize: none;
+		    font-size: .3rem;
+		    color: #333;
+		    padding: .5rem .2rem 0 0;
+		    overflow-y: visible;
+		    border: 0;
+		}
+		p{
+			width: 100%;
+			text-align: right;
+			font-size: .28rem;
+			color: #f00;
+			line-height: 1.5;
+			padding: 0 .2rem .2rem;
+		}
+	}
+	div.leaveType_wrap .rightPoint{
+           font-size: .35rem;
+           color: #999;
+	}
+	div.stateEdite span{
+		   display: inline-block;
+		   line-height: 1.5rem;
+		   text-align: right;
+           font-size: .3rem;
+           color: #999;
+    }
+	div.stateEdite .rightPoint{
+		   font-size: .32rem;
+           color: #999;
+	}
+}
+.submit_area{
+	width: 100%;
+	padding:0 .5rem .4rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	button{
+		@include btn01(100%,.98rem,.5rem,#0093dd,.36rem);
+		padding:0;
+	}
+}
+#loading{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,.1);
+	display: none;
+	z-index: 9999;
+	.loading_icon{
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 16px;
+		height: 16px;
+		background: url("../images/load.gif") left top no-repeat;
+		background-size: cover;
+		-webkit-transform: translate(-50%,-50%);
+		-moz-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+		-o-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+	}
+}

@@ -1,0 +1,217 @@
+@import "common.scss";
+@import "font.scss";
+.addressList_wrap{
+	width: 100%;
+    padding:.9rem 0 0;
+    min-height: 100%;
+}
+.top_tab{
+	width: 100%;
+	height: .98rem;
+	background: #0093dd;
+	ul{
+    	width: 100%;
+    	height: .98rem;
+    	display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    flex-direction:row;
+	    flex-wrap:nowrap;
+	    justify-content:space-around;
+	    align-items:center;
+	    li{
+	    	flex: none;
+	    	height: .98rem;
+	    	a{
+	    		@include inlineBlock(top);
+	    		font-size: .32rem;
+	    		height: .98rem;
+	    		line-height: .94rem;
+	    		color: #fff;
+	    		border-bottom: .04rem solid transparent;
+	    		padding:0 .1rem;
+	    	}
+	    }
+	    li.active{
+	    	a{
+	    		border-bottom: .04rem solid #fff;
+	    	}
+	    }
+    }
+}
+.contentPanel{
+	display: none;
+	.tit{
+	
+
+		font-size: .3rem;
+		color: #333;
+	}
+	.commonTit{
+		width: 100%;
+		height: .8rem;
+		line-height: .8rem;
+		background: #f0f0f0;
+		padding:0 .2rem;
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    flex-direction:row;
+	    flex-wrap:nowrap;
+	    justify-content:space-between;
+	    align-items:center;
+	    border-bottom: .01rem solid #fff;
+	    .tit,i{
+	    	display: block;
+	    	flex: none;
+	    }
+	    i{
+	    	font-size: .32rem;
+		    color: #aaa;
+	    }
+   }
+}
+
+.cont_list{
+    width: 100%;
+    background: #fff;
+    padding-left: .2rem;
+    display: none;
+    li{
+    	width: 100%;
+    	font-size: 0;
+    	.pic,.nameJob_list_wrap{
+    		@include inlineBlock(middle);
+    	}
+    	.pic{
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right:.2rem;
+            img{
+            	@include inlineBlock(top);
+            	width: 1.2rem;
+            	height: 1.2rem;
+            	border-radius: 50%;
+            }
+    	}
+    	.nameJob_list_wrap{
+    		width: -webkit-calc(100% - 1.4rem);
+        	width: -moz-calc(100% - 1.4rem);
+        	width: -ms-calc(100% - 1.4rem);
+        	width: -o-calc(100% - 1.4rem);
+        	width: calc(100% - 1.4rem);
+            padding: .48rem .2rem .48rem 0;
+        	border-bottom: .01rem solid #f0f0f0;
+         }
+        .nameJob_list{
+        	width: 100%;
+        	display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    flex-direction:row;
+		    flex-wrap:nowrap;
+		    justify-content:space-between;
+		    align-items:center;
+		}
+        .name_job{
+            h5{
+            	font-size: .32rem;
+            	color: #333;
+            	margin-bottom: .05rem;
+            }
+            p{
+            	font-size: .28rem;
+            	color: #999;
+            }
+        }
+        .right_point{
+        	color: #999;
+        	font-size: .4rem;
+        	i{
+        		color: #999;
+        	    font-size: .4rem;
+        	}
+        }
+    }
+}
+.cont_list.active{
+	display: block;
+}
+.addressInfo_box{
+	width: 100%;
+	padding: 0 1rem;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	-webkit-transform: translate(0,-50%);
+	-moz-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+.addressInfo_cont{
+	width: 100%;
+	background: #fff;
+	border-radius: .1rem;
+	ul{
+		width: 100%;
+		padding-left:.3rem;
+	}
+	li{
+        width: 100%;
+        padding:.42rem .3rem .42rem 0;
+        display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+		justify-content:space-between;
+		align-items:center;
+		border-bottom: .01rem solid #f0f0f0;
+		span,p{
+			flex: none;
+		}
+		span{
+			@include inlineBlock(middle);
+            font-size: .30rem;
+            color: #999;
+            word-wrap: nowrap;
+            width: .8rem;
+           }
+		p{
+			width: -webkit-calc(100% - .8rem);
+			width: -moz-calc(100% - .8rem);
+			width: -ms-calc(100% - .8rem);
+			width: -o-calc(100% - .8rem);
+			width: calc(100% - .8rem);
+           font-size: .30rem;
+           color: #333;
+           padding-left: .3rem;
+           word-break: break-all;
+           word-wrap: break-word;
+           text-align: right;
+		}
+		.callBtn{
+			display: block;
+			margin: 0 auto;
+			width: 1.5rem;
+			height: 1.5rem;
+			background: #0093dd;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 1.5rem;
+			i{
+				font-size: .6rem;
+				color: #fff;
+				font-weight: bold;
+			}
+		}
+	}
+	li:last-of-type{
+		border-bottom: 0;
+	}
+}

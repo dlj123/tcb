@@ -1,0 +1,25 @@
+@import "common.scss";
+@import "font.scss";
+.content_wrap{
+	 width: 100%;
+	 min-height: 100%;
+     padding:.9rem 0 1.18rem;
+     background: #fff;
+}
+.companylist_label{
+	width: 100%;
+	padding: .6rem .4rem .3rem;
+	font-size: .32rem;
+	color: #333;
+}
+.companyList{
+	width: 100%;
+	padding:0 .6rem;
+	li{
+		width: 100%;
+		font-size: .3rem;
+		color: #666;
+		line-height: 1.5;
+		margin-bottom: .2rem;
+	}
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" /><!--禁止百度转码-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置状态栏的背景颜色，启用webapp模式时生效 -->
+	<meta name="format-detection" content="telephone=no" /><!-- 禁止数字识别为电话号码 -->
+	<title></title>
+    <script type="text/javascript" src="../../js/remAdaptation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/leave.css">
+</head>
+
+<body>
+	<header class="commonHeader">
+		<div class="common_top">
+			<div class="toBack">
+				<a href="javascript:history.go(-1)">
+					<i class="iconfont icon-fanhui"></i>返回
+				</a>
+			</div>
+			<div class="tit">印章证照</div>
+			<div class="asidemenu"><i class="iconfont icon-fangzi"></i></div>
+		</div>
+	</header>
+	<section class="leave_wrap whitebg pb148">
+		<div class="top_tab">
+			<ul>
+				<li class="active">
+					<a href="javascript:;">印章证照</a>
+				</li>
+				<li>
+					<a href="javascript:;">印章证照记录</a>
+				</li>
+			</ul>
+		</div>
+		<div class="content_panel" style="display: block;">
+			<div class="infos">
+				<div class="infos_list">
+					<div class="item">
+						<div class="label">公司</div>
+						<div class="info_item company_wrap">
+							<span id="company">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">部门</div>
+						<div class="info_item dept_wrap">
+							<span id="department">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">职位</div>
+						<div class="info_item position_wrap">
+							<span id="position">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">人员姓名</div>
+						<div class="info_item user_wrap">
+							<span id="user">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">使用日期</div>
+						<!--rewardDate字段-->
+						<div class="info_item rewardDate_wrap">
+							<span id="rewardDate">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">印章类型</div>
+						<!--STAMP_TYPE字段-->
+						<div class="info_item sealType_wrap">
+							<span id="sealType">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">证照类型</div>
+						<!--LICENCE_TYPE字段-->
+						<div class="info_item licenseType_wrap">
+							<span id="licenseType">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+					<div class="item beizhu">
+						<div class="label">用途</div>
+						<!--USES字段-->
+						<div class="info_item uses_wrap certify_mark leaveMark_wrap">
+							<textarea type="text" placeholder="请输入" class="uses leaveMark"></textarea>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">发往单位</div>
+						<!--SEND_UNIT字段-->
+						<div class="info_item send_unit_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="send_unit  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">文件名称</div>
+						<!--FILENAME字段-->
+						<div class="info_item filename_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="filename  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">使用事由</div>
+						<!--REASON字段-->
+						<div class="info_item reason_wrap  certify_mark">
+							<input type="text" placeholder="请输入" class="reason  leaveMark"></input>
+						</div>
+					</div>
+					<div class="item beizhu">
+						<div class="label">印章用途</div>
+						<!--SEAL_USE字段-->
+						<div class="info_item use_wrap certify_mark leaveMark_wrap">
+							<textarea type="text" placeholder="请输入" class="sealuse leaveMark"></textarea>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">归还日期</div>
+						<!--RETURN_DATE字段-->
+						<div class="info_item returnDate_wrap">
+							<span id="returnDate">请选择</span>
+							<i class="rightPoint iconfont icon-arrow-right"></i>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="addpics">
+                               <div class="addpics_tit">
+                                    <h3>添加图片</h3>
+                                    <span><em>0</em>/9</span>
+                                </div>
+                     
+                                <ul class="addpics_list" id="fileList">
+                                    <li class="last" id="last">
+                                       <div class="pic">
+                                            <input type="file" id="upImgInput" name="image" accept="image/*" capture="camera" multiple class="upImgInput">
+                                            
+                                                <span class="addIcon iconfont icon-add"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                 <div class="upAttach_area">
+                                    <div id="upAttacnBtn_wrap">
+		                                上传附件
+		                                <input type="file" accept=".csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,text/html,.pdf" />
+		                            </div>
+                                    <ul id="upAttacnList">
+                                        <!--<li>
+                                            <p>某某文件</p>
+                                            <a href="javascript:;">删除</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+            </div> 
+			<div class="pt2">
+				<div class="submit_wrap">
+					<button type="submit" class="submit_btn" id="seallicenseSubmit">提交</button>
+				</div>
+			</div>
+		</div>
+		<div class="content_panel">
+			<ul class="seallicense_record" id="seallicense_record">
+			</ul>
+		</div>
+	</section>
+     <div id="loading">
+        <span class="loading_icon"></span>
+    </div> 
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/lib/require.js" data-main="../../js/seallicense/seallicense"></script>
+	<script type="text/javascript" src="../../js/widget/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/widget/picker.min.js"></script>
+
+</body>
+</html>
